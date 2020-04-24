@@ -30,7 +30,7 @@ def dff_results(jstart,jend,kstart,kend):
         dff_mean_all = np.append(dff_mean_all,dff_mean)# an array of df/f for 1600 trials
     return dff_mean_all
 
-# for a neuron, [jstart:jend,kstart:kend], DF is a an array of shape=(1600,1), containing the df/f in each trial. 
+# for a neuron, [jstart:jend,kstart:kend], DF is a a dataframe of shape=(1600,7), containing the 5 spatial freq * 5 temporal freq * 8 orientation combination of stimuli, 8 trials for each condition, and the 7th column is the df/f in that corresponding trial.
 
 DF = pd.read_csv('data/PVC-7/122008_140124_windowmix/stimulus.csv')
 DF.insert(6,'dff',dff_results(jstart:jend,kstart:kend)) 
